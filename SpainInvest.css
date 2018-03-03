@@ -1,0 +1,21 @@
+.info-tooltip {
+	border-bottom: 1px black dashed;
+}
+
+.results input.expense {
+	font-weight: bold;
+	color: darkred !important;
+	background-color: #ffe0d9;
+}
+
+.results input.income {
+	font-weight: bold;
+	color: #188b72 !important;
+	background-color: #e9ffe3;
+}
+
+.results input.total {
+	font-weight: bold;
+	color: darkblue !important;
+	background-color: aliceblue;
+}

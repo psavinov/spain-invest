@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Калькулятор инвестора в испанскую недвижимость</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		});
+	</script>
+
+	<link rel="stylesheet" href="SpainInvest.css">
+	<script src="SpainInvest.js"></script>
+</head>
+<body>
+	<div>
+		<div class="text-center mt-3">
+			<h3>Калькулятор инвестора в испанскую недвижимость</h3>
+		</div>
+
+		<br/>
+
+		<p class="alert alert-info text-justify col-md-5 col-xs-10 col-lg-5" style="margin: 0 auto; float: none;">
+			Данный инструмент позволит Вам рассчитать затраты и потенциальный доход от сдачи в аренду недвижимости в Испании. Заполните данные квартиры, потенциальные затраты и данные по аренде, и нажмите кнопку "Рассчитать".
+		</p>
+
+		<br />
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div id="accordion">
+						<div class="card">
+							<div class="card-header" id="aptHead">
+								<h5 class="mb-0">
+									<button class="btn btn-link" data-toggle="collapse" data-target="#aptData" aria-expanded="true" aria-controls="aptData">
+										Данные квартиры и покупателя
+									</button>
+								</h5>
+							</div>
+
+							<div id="aptData" class="collapse show" aria-labelledby="aptHead" data-parent="#accordion">
+								<div class="card-body">
+									<div class="row mb-3">
+										<div class="col">
+											<div class="form-check">
+												<input type="checkbox" class="form-check-input" id="aptNew">
+												<label class="form-check-label" for="aptNew">Вторичная недвижимость</label>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-check">
+												<input type="checkbox" class="form-check-input" id="aptUrban">
+												<label class="form-check-label" for="aptUrban">Недвижимость в городе</label>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="aptPrice">Стоимость квартиры, евро</label>
+												<input type="number" class="form-control" id="aptPrice" placeholder="0">
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="aptSize">Площадь, м<sup>2</sup></label>
+												<input type="number" class="form-control" id="aptSize" placeholder="0">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="aptRegion">Автономия</label>
+												<select class="form-control" id="aptRegion">
+													<option value="andalucia">Андалусия</option>
+													<option value="aragon">Арагон</option>
+													<option value="asturias">Астурия</option>
+													<option value="baleares">Балеарские острова</option>
+													<option value="canarias">Канарские острова</option>
+													<option value="cantabria">Кантабрия</option>
+													<option value="castilla_leon">Кастийя и Леон</option>
+													<option value="castilla_lamancha">Кастийя Ла Манча</option>
+													<option value="catalunya">Каталония</option>
+													<option value="valencia">Валенсия</option>
+													<option value="extremadura">Экстремадура</option>
+													<option value="galicia">Галисия</option>
+													<option value="madrid">Мадрид</option>
+													<option value="murcia">Мурсия</option>
+													<option value="navarra">Наварра</option>
+													<option value="pais_vasco">Страна Басков</option>
+													<option value="rioja">Риоха</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col">
+											<div class="form-check">
+												<input type="checkbox" class="form-check-input" id="aptBigFamily">
+												<label class="info-tooltip form-check-label" for="aptBigFamily" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>До оформления покупки необходимо будет получить бумагу в Испании по месту будущего жительства, подтверждающую что семья является т.н. familia numerosa.</div>">Большая семья (> 3 детей)</label>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-check">
+												<input type="checkbox" class="form-check-input" id="aptResident">
+												<label class="form-check-label" for="aptResident">Налоговый резидент Испании</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="expHead">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#expData" aria-expanded="false" aria-controls="expData">
+										Дополнительные затраты
+									</button>
+								</h5>
+							</div>
+							<div id="expData" class="collapse" aria-labelledby="expHead" data-parent="#accordion">
+								<div class="card-body">
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="expCreditAmnt">Платёж по ипотеке, евро/мес</label>
+												<input type="number" class="form-control" id="expCreditAmnt" placeholder="0">
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="expCreditTerm">Срок ипотеки, лет</label>
+												<input type="number" class="form-control" id="expCreditTerm" placeholder="0">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="expRenew">Стоимость ремонта, евро</label>
+												<input type="number" class="form-control" id="expRenew" placeholder="0">
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label for="expFurniture">Стоимость мебели, евро</label>
+												<input type="number" class="form-control" id="expFurniture" placeholder="0">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label class="info-tooltip" for="expCommon" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Ежегодные платежи, не включающие затраты на газ / воду / электричество, только т.н. gastos de comunidad, эти затраты можно вычесть из налогооблагаемой базы.</div>">Комм. платежи, евро/год</label>
+												<input type="number" class="form-control" id="expCommon" placeholder="0">
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label class="info-tooltip" for="expAgent" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Комиссия агента может быть фиксированой, а может составлять процент от стоимости недвижимости.</div>">Комиссия агента, евро</label>
+												<input type="number" class="form-control" id="expAgent" placeholder="0">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="rentHead">
+								<h5 class="mb-0">
+									<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#rentData" aria-expanded="false" aria-controls="rentData">
+										Данные аренды и налоговые вычеты
+									</button>
+								</h5>
+							</div>
+							<div id="rentData" class="collapse" aria-labelledby="rentHead" data-parent="#accordion">
+								<div class="card-body">
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="rentMonthCost" >Стоимость аренды, евро/мес</label>
+												<input type="number" class="form-control" id="rentMonthCost" placeholder="0">
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label class="info-tooltip" for="rentTerm" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Укажите ожидаемую занятость квартиры месяцев в году при долгосрочной аренде, либо примерную занятость для посуточной аренды.</div>">Занятость, мес/год</label>
+												<input type="number" class="form-control" id="rentTerm" placeholder="0">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label class="info-tooltip" for="taxDiscount" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Помимо коммунальных платежей, из налогооблагаемой базы можно вычесть различные расходы - затраты на ремонт, амортизацию, страховку и т.д.</div>">Налоговые вычеты, евро/год</label>
+												<input type="number" class="form-control" id="taxDiscount" placeholder="0">
+											</div>
+										</div>
+										<div class="col">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card p-3">
+						<div class="form-inline">
+							<label for="calcTerm" >Срок расчёта, лет&nbsp;</label>
+							<input type="number" class="form-control" id="calcTerm" placeholder="0">
+						</div>
+						<button class="btn btn-primary btn-lg mt-3" onclick="Spain.calculateStats();" type="button">
+							Рассчитать
+						</button>
+					</div>
+
+				</div>
+				<div class="col results">
+					<div class="card">
+						<div class="card-header">
+							Результаты расчёта
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultItp" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на передачу прав собственности, платится один раз и только для вторичной недвижимости</div>">Налог ITP, евро</label>
+										<input type="number" class="expense form-control" id="resultItp" placeholder="0" readonly>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultIbi" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на недвижимое имущество, платится каждый год</div>">Налог IBI, евро</label>
+										<input type="number" class="expense form-control" id="resultIbi" placeholder="0" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultIrpf" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на доходы физических лиц, платится каждый год если сумма дохода от аренды превышает 1000 евро</div>">Налог IRPF, евро</label>
+										<input type="number" class="expense form-control" id="resultIrpf" placeholder="0" readonly>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultCredit" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Сумма платежей по ипотеке за расчетный период</div>">Ипотека, евро</label>
+										<input type="number" class="expense form-control" id="resultCredit" placeholder="0" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultExp" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Коммунальные платежи, ремонт, мебель, комиссия агента при покупке</div>">Прочие расходы, евро</label>
+										<input type="number" class="expense form-control" id="resultExp" placeholder="0" readonly>
+									</div>
+								</div>
+								<div class="col">
+								</div>
+							</div>
+
+							<hr/>
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultIncome" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Предполагаемый доход от сдачи квартиры в аренду</div>">Доход от аренды, евро</label>
+										<input type="number" class="income form-control" id="resultIncome" placeholder="0" readonly>
+									</div>
+								</div>
+								<div class="col">
+								</div>
+							</div>
+
+							<hr/>
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultTotal" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Разница между затратами и доходом за расчётный период. Положительная величина означает вашу прибыль за расчетный период, отрицательная величина показывает ваши потери за расчетный период.</div>">ИТОГО, евро</label>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<div class="input-group-text" id="totalTerm">За Х лет&nbsp;</div>
+											</div>
+											<input type="number" class="total form-control" id="resultTotal" placeholder="0" readonly>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+								</div>
+							</div>
+
+							<br/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<footer class="text-center">
+		2018, <a href="http://youtube.com/PavelSavinovEs">http://youtube.com/PavelSavinovEs</a>
+	</footer>
+
+</body>
+</html>
