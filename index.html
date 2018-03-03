@@ -50,27 +50,37 @@
 										<div class="col">
 											<div class="form-check">
 												<input type="checkbox" class="form-check-input" id="aptNew">
-												<label class="form-check-label" for="aptNew">Вторичная недвижимость</label>
+												<label class="info-tooltip form-check-label" for="aptNew" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>При покупке вторичной недвижимости платится налог на передачу прав собственности</div>">Вторичная недвижимость</label>
 											</div>
 										</div>
 										<div class="col">
 											<div class="form-check">
 												<input type="checkbox" class="form-check-input" id="aptUrban">
-												<label class="form-check-label" for="aptUrban">Недвижимость в городе</label>
+												<label class="info-tooltip form-check-label" for="aptUrban" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Для недвижимости, находящейся в населённом пункте и недвижимости, находящейся в деревнях, действует разная ставка налога на недвижимость.</div>">Недвижимость в городе</label>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
-												<label for="aptPrice">Стоимость квартиры, евро</label>
-												<input type="number" class="form-control" id="aptPrice" placeholder="0">
+												<label for="aptPrice">Стоимость квартиры</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="aptPrice" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро</div>
+													</div>
+												</div>
 											</div>
 										</div>
 										<div class="col">
 											<div class="form-group">
-												<label for="aptSize">Площадь, м<sup>2</sup></label>
-												<input type="number" class="form-control" id="aptSize" placeholder="0">
+												<label for="aptSize">Площадь</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="aptSize" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;м<sup>2</sup></div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -131,42 +141,72 @@
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
-												<label for="expCreditAmnt">Платёж по ипотеке, евро/мес</label>
-												<input type="number" class="form-control" id="expCreditAmnt" placeholder="0">
+												<label for="expCreditAmnt">Платёж по ипотеке</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="expCreditAmnt" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро/мес</div>
+													</div>
+												</div>
 											</div>
 										</div>
 										<div class="col">
 											<div class="form-group">
-												<label for="expCreditTerm">Срок ипотеки, лет</label>
-												<input type="number" class="form-control" id="expCreditTerm" placeholder="0">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col">
-											<div class="form-group">
-												<label for="expRenew">Стоимость ремонта, евро</label>
-												<input type="number" class="form-control" id="expRenew" placeholder="0">
-											</div>
-										</div>
-										<div class="col">
-											<div class="form-group">
-												<label for="expFurniture">Стоимость мебели, евро</label>
-												<input type="number" class="form-control" id="expFurniture" placeholder="0">
+												<label for="expCreditTerm">Срок ипотеки</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="expCreditTerm" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;лет</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
-												<label class="info-tooltip" for="expCommon" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Ежегодные платежи, не включающие затраты на газ / воду / электричество, только т.н. gastos de comunidad, эти затраты можно вычесть из налогооблагаемой базы.</div>">Комм. платежи, евро/год</label>
-												<input type="number" class="form-control" id="expCommon" placeholder="0">
+												<label for="expRenew">Стоимость ремонта</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="expRenew" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро</div>
+													</div>
+												</div>
 											</div>
 										</div>
 										<div class="col">
 											<div class="form-group">
-												<label class="info-tooltip" for="expAgent" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Комиссия агента может быть фиксированой, а может составлять процент от стоимости недвижимости.</div>">Комиссия агента, евро</label>
-												<input type="number" class="form-control" id="expAgent" placeholder="0">
+												<label for="expFurniture">Стоимость мебели</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="expFurniture" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label class="info-tooltip" for="expCommon" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Ежегодные платежи, не включающие затраты на газ / воду / электричество, только т.н. gastos de comunidad, эти затраты можно вычесть из налогооблагаемой базы.</div>">Комм. платежи</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="expCommon" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро/год</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col">
+											<div class="form-group">
+												<label class="info-tooltip" for="expAgent" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Комиссия агента может быть фиксированой, а может составлять процент от стоимости недвижимости.</div>">Комиссия агента</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="expAgent" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -187,14 +227,24 @@
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
-												<label for="rentMonthCost" >Стоимость аренды, евро/мес</label>
-												<input type="number" class="form-control" id="rentMonthCost" placeholder="0">
+												<label for="rentMonthCost" >Стоимость аренды</label>
+												<div class="input-group">
+													<input type="number" class="form-control" id="rentMonthCost" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро/мес</div>
+													</div>
+												</div>
 											</div>
 										</div>
 										<div class="col">
 											<div class="form-group">
 												<label class="info-tooltip" for="rentTerm" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Укажите ожидаемую занятость квартиры месяцев в году при долгосрочной аренде, либо примерную занятость для посуточной аренды.</div>">Занятость, мес/год</label>
-												<input type="number" class="form-control" id="rentTerm" placeholder="0">
+												<div class="input-group">
+													<input type="number" class="form-control" id="rentTerm" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;мес/год</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -202,7 +252,12 @@
 										<div class="col">
 											<div class="form-group">
 												<label class="info-tooltip" for="taxDiscount" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Помимо коммунальных платежей, из налогооблагаемой базы можно вычесть различные расходы - затраты на ремонт, амортизацию, страховку и т.д.</div>">Налоговые вычеты, евро/год</label>
-												<input type="number" class="form-control" id="taxDiscount" placeholder="0">
+												<div class="input-group">
+													<input type="number" class="form-control" id="taxDiscount" placeholder="0">
+													<div class="input-group-append">
+														<div class="input-group-text">&nbsp;евро</div>
+													</div>
+												</div>
 											</div>
 										</div>
 										<div class="col">
@@ -215,7 +270,12 @@
 					<div class="card p-3">
 						<div class="form-inline">
 							<label for="calcTerm" >Срок расчёта, лет&nbsp;</label>
-							<input type="number" class="form-control" id="calcTerm" placeholder="0">
+							<div class="input-group">
+								<input type="number" class="form-control" id="calcTerm" placeholder="0">
+								<div class="input-group-append">
+									<div class="input-group-text">&nbsp;лет</div>
+								</div>
+							</div>
 						</div>
 						<button class="btn btn-primary btn-lg mt-3" onclick="Spain.calculateStats();" type="button">
 							Рассчитать
@@ -232,71 +292,103 @@
 							<div class="row">
 								<div class="col">
 									<div class="form-group">
-										<label class="info-tooltip" for="resultItp" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на передачу прав собственности, платится один раз и только для вторичной недвижимости</div>">Налог ITP, евро</label>
-										<input type="number" class="expense form-control" id="resultItp" placeholder="0" readonly>
-									</div>
-								</div>
-								<div class="col">
-									<div class="form-group">
-										<label class="info-tooltip" for="resultIbi" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на недвижимое имущество, платится каждый год</div>">Налог IBI, евро</label>
-										<input type="number" class="expense form-control" id="resultIbi" placeholder="0" readonly>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label class="info-tooltip" for="resultIrpf" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на доходы физических лиц, платится каждый год если сумма дохода от аренды превышает 1000 евро</div>">Налог IRPF, евро</label>
-										<input type="number" class="expense form-control" id="resultIrpf" placeholder="0" readonly>
-									</div>
-								</div>
-								<div class="col">
-									<div class="form-group">
-										<label class="info-tooltip" for="resultCredit" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Сумма платежей по ипотеке за расчетный период</div>">Ипотека, евро</label>
-										<input type="number" class="expense form-control" id="resultCredit" placeholder="0" readonly>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label class="info-tooltip" for="resultExp" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Коммунальные платежи, ремонт, мебель, комиссия агента при покупке</div>">Прочие расходы, евро</label>
-										<input type="number" class="expense form-control" id="resultExp" placeholder="0" readonly>
-									</div>
-								</div>
-								<div class="col">
-								</div>
-							</div>
-
-							<hr/>
-
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label class="info-tooltip" for="resultIncome" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Предполагаемый доход от сдачи квартиры в аренду</div>">Доход от аренды, евро</label>
-										<input type="number" class="income form-control" id="resultIncome" placeholder="0" readonly>
-									</div>
-								</div>
-								<div class="col">
-								</div>
-							</div>
-
-							<hr/>
-
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<label class="info-tooltip" for="resultTotal" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Разница между затратами и доходом за расчётный период. Положительная величина означает вашу прибыль за расчетный период, отрицательная величина показывает ваши потери за расчетный период.</div>">ИТОГО, евро</label>
+										<label class="info-tooltip" for="resultItp" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на передачу прав собственности, платится один раз и только для вторичной недвижимости</div>">Налог ITP</label>
 										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="input-group-text" id="totalTerm">За Х лет&nbsp;</div>
+											<input type="number" class="expense form-control" id="resultItp" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
 											</div>
-											<input type="number" class="total form-control" id="resultTotal" placeholder="0" readonly>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultIbi" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на недвижимое имущество, платится каждый год</div>">Налог IBI</label>
+										<div class="input-group">
+											<input type="number" class="expense form-control" id="resultIbi" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultIrpf" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог на доходы физических лиц, платится каждый год если сумма дохода от аренды превышает 1000 евро</div>">Налог IRPF</label>
+										<div class="input-group">
+											<input type="number" class="expense form-control" id="resultIrpf" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultCredit" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Сумма платежей по ипотеке за расчетный период</div>">Ипотека</label>
+										<div class="input-group">
+											<input type="number" class="expense form-control" id="resultCredit" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultExp" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Коммунальные платежи, ремонт, мебель, комиссия агента при покупке</div>">Прочие расходы</label>
+										<div class="input-group">
+											<input type="number" class="expense form-control" id="resultExp" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="col">
 								</div>
+							</div>
+
+							<hr/>
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultIncome" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Предполагаемый доход от сдачи квартиры в аренду</div>">Доход от аренды</label>
+										<div class="input-group">
+											<input type="number" class="income form-control" id="resultIncome" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+								</div>
+							</div>
+
+							<hr/>
+
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultTotal" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Разница между затратами и доходом за расчётный период. Положительная величина означает вашу прибыль за расчетный период, отрицательная величина показывает ваши потери за расчетный период.</div>">ИТОГО</label>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<div class="input-group-text" id="totalTerm">За Х лет&nbsp;</div>
+											</div>
+											<input type="number" class="total form-control col-lg-5" id="resultTotal" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
 							</div>
 
 							<br/>
