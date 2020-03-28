@@ -391,6 +391,7 @@ Spain.calculateTotal = function () {
 	expenses += this.calculateItp();
 	expenses += this.calculateIrpf();
 
+	var finalPrice = Number($('#finalPrice').val());
 
 	if (this.calculateCredit() > 0) {
 		expenses += this.calculateCredit();
@@ -401,7 +402,7 @@ Spain.calculateTotal = function () {
 		expenses += Number(price);
 	}
 
-	return income - expenses;
+	return income - expenses + finalPrice;
 };
 
 Spain.calculateStats = function () {
