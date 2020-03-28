@@ -391,8 +391,6 @@ Spain.calculateTotal = function () {
 	expenses += this.calculateItp();
 	expenses += this.calculateIrpf();
 
-	var finalPrice = Number($('#finalPrice').val());
-
 	if (this.calculateCredit() > 0) {
 		expenses += this.calculateCredit();
 	}
@@ -402,7 +400,7 @@ Spain.calculateTotal = function () {
 		expenses += Number(price);
 	}
 
-	return income - expenses + finalPrice;
+	return income - expenses;
 };
 
 Spain.calculateStats = function () {
@@ -414,7 +412,11 @@ Spain.calculateStats = function () {
 	$('#resultExp').val(this.calculateExpenses().toFixed(2));
 	$('#resultTotal').val(this.calculateTotal().toFixed(2));
 
+	var finalPrice = Number($('#finalPrice').val());
+
+	$('#resultTotalFinal').val((this.calculateTotal() + finalPrice).toFixed(2));
+
 	var term = $('#calcTerm').val();
 
-	$('#totalTerm').html('За&nbsp;<b>' + term + '</b>&nbsp;лет&nbsp;');
+	$('.total-term').html('За&nbsp;<b>' + term + '</b>&nbsp;лет&nbsp;');
 };

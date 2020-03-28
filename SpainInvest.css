@@ -19,3 +19,9 @@
 	color: darkblue !important;
 	background-color: aliceblue;
 }
+
+.results input.total-final {
+	font-weight: bold;
+	color: darkblue !important;
+	background-color: lightgoldenrodyellow;
+}

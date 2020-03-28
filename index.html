@@ -266,7 +266,7 @@
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
-												<label class="info-tooltip" for="finalPrice" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Понятно, что предсказать какой будет ситуация с ценами на недвижимость через Х лет сложно, но здесь Вы можете указать предполагаемую остаточную стоимость квартиры на момент окончания срока расчета.</div>">Остаточная стоимость квартиры</label>
+												<label class="info-tooltip" for="finalPrice" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Понятно, что предсказать какой будет ситуация с ценами на недвижимость через Х лет сложно, но здесь Вы можете указать предполагаемую остаточную стоимость объекта недвижимости на момент окончания срока расчета.</div>">Остаточная стоимость</label>
 												<div class="input-group">
 													<input type="number" class="form-control" id="finalPrice" placeholder="0">
 													<div class="input-group-append">
@@ -392,7 +392,7 @@
 										<label class="info-tooltip" for="resultTotal" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Разница между затратами и доходом за расчётный период. Положительная величина означает вашу прибыль за расчетный период, отрицательная величина показывает ваши потери за расчетный период.</div>">ИТОГО</label>
 										<div class="input-group">
 											<div class="input-group-prepend">
-												<div class="input-group-text" id="totalTerm">За Х лет&nbsp;</div>
+												<div class="input-group-text total-term">За Х лет&nbsp;</div>
 											</div>
 											<input type="number" class="total form-control col-lg-5" id="resultTotal" placeholder="0" readonly>
 											<div class="input-group-append">
@@ -401,7 +401,22 @@
 										</div>
 									</div>
 								</div>
-
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label class="info-tooltip" for="resultTotalFinal" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Разница между затратами и доходом за расчётный период. Положительная величина означает вашу прибыль за расчетный период, отрицательная величина показывает ваши потери за расчетный период. Расчёт с учетом дохода от продажи недвижимости по остаточной стоимости.</div>">С учётом продажи квартиры по остаточной стоимости</label>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<div class="input-group-text total-term">За Х лет&nbsp;</div>
+											</div>
+											<input type="number" class="total-final form-control col-lg-5" id="resultTotalFinal" placeholder="0" readonly>
+											<div class="input-group-append">
+												<div class="input-group-text">&nbsp;евро</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 
 							<br/>
