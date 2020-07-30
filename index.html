@@ -10,12 +10,18 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script>
 		$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
+			$('[data-toggle="tooltip"]').tooltip();
 		});
 	</script>
 
 	<link rel="stylesheet" href="SpainInvest.css">
 	<script src="SpainInvest.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			Spain.refreshIbi();
+		});
+	</script>
 </head>
 <body>
 	<div>
@@ -55,7 +61,7 @@
 										</div>
 										<div class="col">
 											<div class="form-check">
-												<input type="checkbox" class="form-check-input" id="aptUrban">
+												<input type="checkbox" class="form-check-input" id="aptUrban" onclick="Spain.refreshIbi();">
 												<label class="info-tooltip form-check-label" for="aptUrban" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Для городской недвижимости и недвижимости, находящейся в деревнях, действует разная ставка налога на недвижимость.</div>">Недвижимость в городе</label>
 											</div>
 										</div>
@@ -88,7 +94,7 @@
 										<div class="col">
 											<div class="form-group">
 												<label for="aptRegion">Автономия</label>
-												<select class="form-control" id="aptRegion">
+												<select class="form-control" id="aptRegion" onchange="Spain.refreshIbi();">
 													<option value="andalucia">Андалусия</option>
 													<option value="aragon">Арагон</option>
 													<option value="asturias">Астурия</option>
@@ -107,6 +113,21 @@
 													<option value="pais_vasco">Страна Басков</option>
 													<option value="rioja">Риоха</option>
 												</select>
+												<div class="mt-3">
+													<div class="form-check mb-3">
+														<input type="checkbox" class="form-check-input" id="manualIbi" onclick="Spain.switchManualIbi();">
+														<label class="info-tooltip form-check-label" for="manualIbi" data-toggle="tooltip" data-html="true" title="<div class='text-justify'>Налог IBI устанавливается конкретным муниципалитетом, если Вы не знаете значение IBI для Вашего муниципалитета, будет использована средняя ставка IBI для выбраной автономии.</div>">Указать ставку IBI вручную</label>
+													</div>
+													<div class="input-group ">
+														<div class="input-group-prepend w-75">
+															<div class="input-group-text w-100">Используемая ставка IBI</div>
+														</div>
+														<input type="number" class="total-final form-control" id="ibiValue" step="0.01" placeholder="0" readonly style="width:10%; background-color: white;">
+														<div class="input-group-append">
+															<div class="input-group-text">&nbsp;%</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>

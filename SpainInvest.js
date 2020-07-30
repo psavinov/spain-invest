@@ -318,7 +318,14 @@ Spain.calculateIbi = function() {
 	var community = $('#aptRegion').val();
 	var term = $('#calcTerm').val();
 
-	return Number(this.data[community].ibi(price, isUrban) * term);
+	var manualIbi = $('#manualIbi:checked').val() === 'on';
+	var ibiValue = $('#ibiValue');
+
+	var ibi = manualIbi ? 
+		Number((ibiValue.val()/100) * price * term) : 
+		Number(this.data[community].ibi(price, isUrban) * term);
+
+	return ibi;
 };
 
 Spain.calculateIrpf = function () {
@@ -419,4 +426,29 @@ Spain.calculateStats = function () {
 	var term = $('#calcTerm').val();
 
 	$('.total-term').html('За&nbsp;<b>' + term + '</b>&nbsp;лет&nbsp;');
+};
+
+Spain.refreshIbi = function () {
+	var manualIbi = $('#manualIbi:checked').val() === 'on';
+	var ibiValue = $('#ibiValue');
+	var isUrban = $('#aptUrban:checked').val() === 'on';
+	var community = $('#aptRegion').val();
+
+	if (!manualIbi) {
+		ibiValue.val(Number(this.data[community].ibi(1, isUrban)*100).toFixed(2));
+	}
+	
+};
+
+Spain.switchManualIbi = function () {
+	var manualIbi = $('#manualIbi:checked').val() === 'on';
+
+	var ibiValue = $('#ibiValue');
+
+	if (manualIbi) {
+		ibiValue.removeAttr('readonly');
+	} else {
+		ibiValue.attr('readonly', true);
+		this.refreshIbi();
+	}
 };
